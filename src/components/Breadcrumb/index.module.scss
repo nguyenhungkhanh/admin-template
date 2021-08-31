@@ -1,0 +1,21 @@
+.wrapper {
+  :global {
+    ol {
+      list-style: none;
+      display: flex;
+      padding-left: 0;
+      li {
+
+        &:not(:first-child) {
+          padding-left: .5rem;
+          &::before {
+            display: inline-block;
+            padding-right: .5rem;
+            color: #6c757d;
+            content: "/";
+          }
+        }
+      }
+    }
+  }
+}

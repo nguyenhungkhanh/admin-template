@@ -10,7 +10,7 @@ export default function Header({ isCollapsed, setIsCollapsed }: TypeProps) {
   return (
     <header>
       <div className="header-left flex">
-        <div className="pointer" onClick={() => setIsCollapsed(!isCollapsed)}>
+        <div className="pointer collapsed-icon" onClick={() => setIsCollapsed(!isCollapsed)}>
           {
             isCollapsed
             ? <MenuFoldOutlined />

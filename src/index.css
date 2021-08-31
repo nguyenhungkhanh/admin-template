@@ -12,10 +12,25 @@ code {
     monospace;
 }
 
+a {
+  cursor: pointer;
+  color: #727cf5;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
 .flex {
   display: flex;
 }
 
 .pointer {
   cursor: pointer;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }

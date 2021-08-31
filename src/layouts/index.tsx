@@ -12,12 +12,14 @@ export default function Layout({ children }: JSX.ElementChildrenAttribute) {
   return (
     <div className={"app" + (isCollapsed ? " is-collapsed" : "")}>
       <Header isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
-      <Sidebar />
       <div className="main-wrapper">
-        <main>
-          {children}
-        </main>
-        <Footer />
+        <Sidebar />
+        <div className="page-content">
+          <main>
+            {children}
+          </main>
+          <Footer />
+        </div>
       </div>
     </div>
   )
