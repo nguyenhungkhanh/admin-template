@@ -1,0 +1,116 @@
+.app {
+  header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    border-bottom: 1px solid #f2f4f9;
+    box-shadow: 3px 0 10px 0 rgb(183 192 206 / 20%);
+    background-color: #fff;
+    z-index: 9999;
+    .header-left {
+      .collapsed-icon {
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      .title-logo {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .sidebar {
+    position: sticky;
+    background-color: #fff;
+    width: 280px;
+    top: 60px;
+    bottom: 0;
+    transition: width .1s ease, margin .1s ease-out;
+    height: calc(100vh - 60px);
+    box-shadow: 0 8px 10px 0 rgb(183 192 206 / 20%); 
+    border-right: 1px solid #f2f4f9; 
+    .menu {
+      padding: 15px 0;
+      .menu-item {
+        padding: 10px 20px;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        position: relative;
+        span.anticon {
+          svg {
+            width: 20px;
+            height: 20px;
+            transition: .15s linear;
+          }
+        }
+        span.title {
+          margin-left: 15px
+        }
+        &.is-active {
+          background-color: #fafafc;
+        }
+        &.is-active::before {
+          content: '';
+          position: absolute;
+          background-color: #1890ff;
+          height: 100%;
+          width: 3px;
+          left: 0;
+          top: 0;
+        }
+        &.is-active, &:hover {
+          span.anticon {
+            svg {
+              fill: #1890ff;
+            }
+          }
+          span.title {
+            color: #1890ff;
+          }
+        }
+      }
+    }
+  }
+
+  .main-wrapper {
+    display: flex;
+    padding-top: 60px;
+    background-color: #fafafc;
+    width: 100%;
+    .page-content {
+      flex: 1;
+      main {
+        padding:  15px;
+        min-height: calc(100vh - 120px);
+      }
+      footer {
+        height: 60px;
+        padding: 0 15px;
+        font-size: 88%;
+        align-items: center;
+        display: flex;
+      }
+    }
+  }
+
+  &.is-collapsed {
+    .sidebar {
+      width: 60px;
+      .menu {
+        .menu-item {
+          span.title {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+}

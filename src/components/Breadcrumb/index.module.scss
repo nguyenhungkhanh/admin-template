@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  :global {
+    nav {
+      ol {
+        list-style: none;
+        display: flex;
+        padding-left: 0;
+        margin-bottom: 0;
+  
+        li {
+          font-size: 1rem;
+          &:not(:first-child) {
+            padding-left: .5rem;
+            &::before {
+              display: inline-block;
+              padding-right: .5rem;
+              color: #6c757d;
+              content: "/";
+            }
+          }
+        }
+      }
+    }
+  }
+}
